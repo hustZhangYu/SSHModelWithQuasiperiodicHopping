@@ -20,10 +20,8 @@ for m=1:length(w_all)
    H1=Hssh_disorder(L,v,w,J0,delta);
    [Ev,E]=eig(H1,'vector');
    Q=zeros(size(Ev,1),size(Ev,2));
-   Q1=zeros(size(Ev,1),size(Ev,2)); 
    [E1,index]=sort(E); 
    for n=1:size(Ev,1)
-       Q1=Q1+Ev(:,n)*Ev(:,n)';
        if n>=L
             Q=Q-Ev(:,index(n))*Ev(:,index(n))';
        else 
